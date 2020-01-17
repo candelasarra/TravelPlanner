@@ -11,7 +11,7 @@ const SimpleTabs = () => {
   };
 
   return (
-    <Paper square elevation={0}>
+    <Paper square elevation={0} style={{ boxShadow: '0px 1px 0px #E8E8E8' }}>
       <Tabs
         value={value}
         indicatorColor="secondary"

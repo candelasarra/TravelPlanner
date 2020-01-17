@@ -1,21 +1,12 @@
-import React, { useState, useRef } from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
+import React, { useState } from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
-import MenuIcon from '@material-ui/icons/Menu';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme, fade } from '@material-ui/core/styles';
-import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
 import {
   Dashboard,
   Person,
@@ -31,9 +22,6 @@ import {
 import Grid from '@material-ui/core/Grid';
 import hex2rgb from 'hex2rgb';
 import { ReactComponent as Suitcase } from '../components/images/suitcase.svg';
-import { ReactComponent as Helpoutline } from '../components/images/helpoutline.svg';
-import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
 
 const drawerItems = [
   { name: 'Dashboard', icon: <Dashboard />, color: '#C01823' },
@@ -156,14 +144,17 @@ const ResposiveDrawer = ({ user, mobileOpen, handleDrawerToggle }) => {
           Suitcase CRM
         </Typography>
       </div>
-
-      <Divider />
       <Grid
         container
         direction="column"
         justify="center"
         alignItems="flex-start"
-        style={{ height: 100, padding: 15 }}
+        style={{
+          height: 100,
+          padding: 15,
+          borderTop: '0.5px solid #00000029',
+          borderBottom: '0.5px solid #00000029'
+        }}
       >
         <Grid item xs>
           <Typography>{user.img}</Typography>
@@ -179,7 +170,6 @@ const ResposiveDrawer = ({ user, mobileOpen, handleDrawerToggle }) => {
           </Typography>
         </Grid>
       </Grid>
-      <Divider />
 
       <List
         style={{

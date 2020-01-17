@@ -18,6 +18,8 @@ import { ReactComponent as Helpoutline } from '../components/images/helpoutline.
 import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
 import CardsList from './CardsList';
 import { useWindowSize } from './Hooks';
+import List from './List';
+import Graph from './Graph';
 const useStyles = makeStyles(theme => ({
   HomeMainDiv: {
     display: 'flex'
@@ -91,6 +93,13 @@ const useStyles = makeStyles(theme => ({
   },
   hiddenSearch: {
     margin: '10px'
+  },
+  GraphListsDiv: {
+    backgroundColor: '#F9F9F9',
+    display: 'flex',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
+    }
   }
 }));
 const Home = () => {
@@ -114,77 +123,92 @@ const Home = () => {
         mobileOpen={mobileOpen}
         handleDrawerToggle={handleDrawerToggle}
       />
-      <div style={{ width: '100%' }}>
-        <AppBar
-          position="static"
-          className={classes.appBar}
-          style={{ backgroundColor: 'white', boxShadow: 'unset' }}
-        >
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              className={classes.menuButton}
-            >
-              <MenuIcon style={{ color: 'black' }} />
-            </IconButton>
-            <div
-              style={{
-                display: 'flex',
-                width: '100%',
-                justifyContent: 'flex-end',
-                alignItems: 'center'
-              }}
-            >
-              <Hidden xsDown implementation="css">
-                <div className={classes.search}>
-                  <div className={classes.searchIcon}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%'
+        }}
+      >
+        <div style={{ width: '100%' }}>
+          <AppBar
+            position="static"
+            className={classes.appBar}
+            style={{ backgroundColor: 'white', boxShadow: 'unset' }}
+          >
+            <Toolbar>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                className={classes.menuButton}
+              >
+                <MenuIcon style={{ color: 'black' }} />
+              </IconButton>
+              <div
+                style={{
+                  display: 'flex',
+                  width: '100%',
+                  justifyContent: 'flex-end',
+                  alignItems: 'center'
+                }}
+              >
+                <Hidden xsDown implementation="css">
+                  <div className={classes.search}>
+                    <div className={classes.searchIcon}>
+                      <SearchIcon />
+                    </div>
+                    <InputBase
+                      placeholder="Search"
+                      classes={{
+                        root: classes.inputRoot,
+                        input: classes.inputInput
+                      }}
+                      inputProps={{
+                        'aria-label': 'search',
+                        color: '#000000DE'
+                      }}
+                    />
+                  </div>
+                </Hidden>
+                <Hidden
+                  smUp
+                  implementation="css"
+                  className={classes.hiddenSearch}
+                >
+                  <div className={classes.searchIcon} style={{ margin: '2%' }}>
                     <SearchIcon />
                   </div>
-                  <InputBase
-                    placeholder="Search"
-                    classes={{
-                      root: classes.inputRoot,
-                      input: classes.inputInput
-                    }}
-                    inputProps={{ 'aria-label': 'search', color: '#000000DE' }}
-                  />
+                </Hidden>
+                <Helpoutline className={classes.HelpOutline} />
+                <div className={classes.notificationIcon}>
+                  <NotificationsNoneOutlinedIcon />
                 </div>
-              </Hidden>
-              <Hidden
-                smUp
-                implementation="css"
-                className={classes.hiddenSearch}
-              >
-                <div className={classes.searchIcon} style={{ margin: '2%' }}>
-                  <SearchIcon />
-                </div>
-              </Hidden>
-              <Helpoutline className={classes.HelpOutline} />
-              <div className={classes.notificationIcon}>
-                <NotificationsNoneOutlinedIcon />
               </div>
-            </div>
-          </Toolbar>
-        </AppBar>
-        <div>
-          <SimpleTabs />
+            </Toolbar>
+          </AppBar>
+          <div>
+            <SimpleTabs />
+          </div>
+          <div
+            style={{
+              padding: '10px',
+              display: 'flex',
+              overflow: 'scroll',
+              maxWidth: mobileOpen || width <= 600 ? width - 20 : width - 276
+            }}
+          >
+            <CardsList cardTitle="Leads" />
+            <CardsList cardTitle="Quotes" />
+            <CardsList cardTitle="Book/Invoice" />
+            <CardsList cardTitle="Departing" />
+          </div>
         </div>
-        <Divider style={{ width: '100%' }} />
-        <div
-          style={{
-            padding: '10px',
-            display: 'flex',
-            overflow: 'scroll',
-            maxWidth: mobileOpen || width <= 600 ? width - 20 : width - 276
-          }}
-        >
-          <CardsList cardTitle="Leads" />
-          <CardsList cardTitle="Leads" />
-          <CardsList cardTitle="Leads" />
-          <CardsList cardTitle="Leads" />
+        <div className={classes.GraphListsDiv}>
+          <Graph graphTitle="Gross Sales" width={width} />
+          <List cardTitle="To Dos & Remainders" />
+          <List cardTitle="Upcoming Trips" />
         </div>
       </div>
       <Fab

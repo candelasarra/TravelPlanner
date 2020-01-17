@@ -114,13 +114,19 @@ const CardsList = ({ cardTitle }) => {
         style={{
           flexGrow: 1,
           display: 'flex',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
+          margin: '5px'
         }}
       >
-        <Typography variant="h6" style={{ fontWeight: 'bold' }}>
+        <Typography
+          variant="h6"
+          style={{ fontWeight: 'bold', marginLeft: '8px' }}
+        >
           {cardTitle}
         </Typography>
-        <Threedots />
+        <Button disableRipple size="small">
+          <Threedots />
+        </Button>
       </div>
       <div style={{ flexGrow: 5, overflow: 'scroll', maxHeight: '600px' }}>
         {cards.map(
@@ -149,7 +155,7 @@ const CardsList = ({ cardTitle }) => {
                       component="p"
                       style={{
                         fontWeight: 'bold',
-                        padding: '12%',
+                        padding: '12px',
                         width: 'fit-content',
                         whiteSpace: 'nowrap'
                       }}
@@ -171,14 +177,17 @@ const CardsList = ({ cardTitle }) => {
                       style={{
                         backgroundColor: `Rgb(${colors[standing].rgb[0]},${colors[standing].rgb[1]},${colors[standing].rgb[2]}, 0.2 )`,
                         borderRadius: '2px',
-                        padding: '2%',
+                        padding: '5px',
                         width: 'fit-content'
                       }}
                     >
                       <Typography
                         variant="caption"
                         component="p"
-                        style={{ whiteSpace: 'nowrap' }}
+                        style={{
+                          whiteSpace: 'nowrap',
+                          color: `Rgb(${colors[standing].rgb[0]},${colors[standing].rgb[1]},${colors[standing].rgb[2]}, 1 )`
+                        }}
                       >
                         {standing}
                       </Typography>
@@ -204,7 +213,7 @@ const CardsList = ({ cardTitle }) => {
                     style={{
                       color: '#00000061',
                       position: 'relative',
-                      bottom: '-17px'
+                      bottom: '-13px'
                     }}
                     variant="caption"
                   >
@@ -216,8 +225,10 @@ const CardsList = ({ cardTitle }) => {
           }
         )}
       </div>
-      <div style={{ flexGrow: 1 }}>
-        <Typography variant="caption"> total {cards.length}</Typography>
+      <div style={{ flexGrow: 1, margin: '4px' }}>
+        <Typography variant="caption" style={{ opacity: '0.6' }}>
+          Total {cards.length}
+        </Typography>
       </div>
     </div>
   );
