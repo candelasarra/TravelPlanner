@@ -70,7 +70,7 @@ const cards = [
     name: 'Jimmy Dean',
     extras: '+10',
     img: 'image',
-    standing: 'Just Shopping',
+    standing: 'New Inquiry',
     tasks: '1/4',
     date: Date.now()
   },
@@ -81,7 +81,7 @@ const cards = [
     name: 'Jimmy Dean',
     extras: '+10',
     img: 'image',
-    standing: 'Just Shopping',
+    standing: 'No Payments Made',
     tasks: '1/4',
     date: Date.now()
   }
