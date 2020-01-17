@@ -203,6 +203,7 @@ const Home = () => {
             <CardsList cardTitle="Quotes" />
             <CardsList cardTitle="Book/Invoice" />
             <CardsList cardTitle="Departing" />
+            <CardsList cardTitle="Returned" />
           </div>
         </div>
         <div className={classes.GraphListsDiv}>
