@@ -74,7 +74,7 @@ const Graph = ({ graphTitle, width }) => {
         backgroundColor: 'white',
         border: '1px solid #E5E9F1',
         margin: '10px',
-        minWidth: width < 960 ? 325 : 800
+        minWidth: width < 960 ? 325 : 750
       }}
     >
       <Typography
