@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
   // },
   menuButton: {
     marginRight: theme.spacing(2),
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       display: 'none'
     }
   },
@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {}
   },
   searchIcon: {
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       width: 'min-content',
       position: 'relative'
     },
@@ -97,6 +97,7 @@ const useStyles = makeStyles(theme => ({
   GraphListsDiv: {
     backgroundColor: '#F9F9F9',
     display: 'flex',
+    flexFlow: 'wrap',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column'
     }
@@ -126,8 +127,7 @@ const Home = () => {
       <div
         style={{
           display: 'flex',
-          flexDirection: 'column',
-          width: '100%'
+          flexDirection: 'column'
         }}
       >
         <div style={{ width: '100%' }}>
@@ -154,7 +154,7 @@ const Home = () => {
                   alignItems: 'center'
                 }}
               >
-                <Hidden xsDown implementation="css">
+                <Hidden smDown implementation="css">
                   <div className={classes.search}>
                     <div className={classes.searchIcon}>
                       <SearchIcon />
@@ -173,11 +173,11 @@ const Home = () => {
                   </div>
                 </Hidden>
                 <Hidden
-                  smUp
+                  mdUp
                   implementation="css"
                   className={classes.hiddenSearch}
                 >
-                  <div className={classes.searchIcon} style={{ margin: '2%' }}>
+                  <div className={classes.searchIcon}>
                     <SearchIcon />
                   </div>
                 </Hidden>
@@ -196,7 +196,7 @@ const Home = () => {
               padding: '10px',
               display: 'flex',
               overflow: 'scroll',
-              maxWidth: mobileOpen || width <= 600 ? width - 20 : width - 276
+              maxWidth: mobileOpen || width <= 960 ? width - 20 : width - 276
             }}
           >
             <CardsList cardTitle="Leads" />

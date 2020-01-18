@@ -40,13 +40,11 @@ const useStyles = makeStyles(theme => ({
     display: 'flex'
   },
   drawer: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       width: 256,
       flexShrink: 0
     },
-    [theme.breakpoints.down('xs')]: {
-      flexShrink: 0
-    }
+    [theme.breakpoints.down('sm')]: {}
   },
   appBar: {
     [theme.breakpoints.up('sm')]: {
@@ -56,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       display: 'none'
     }
   },
@@ -64,7 +62,7 @@ const useStyles = makeStyles(theme => ({
   drawerPaper: {
     width: 256,
 
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       width: '90%'
     }
   },
@@ -81,7 +79,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {}
   },
   searchIcon: {
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       width: 'min-content',
       position: 'relative'
     },
@@ -109,7 +107,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(1, 1, 1, 7),
     transition: theme.transitions.create('width'),
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       width: 120,
       '&:focus': {
         width: 200
@@ -153,7 +151,8 @@ const ResposiveDrawer = ({ user, mobileOpen, handleDrawerToggle }) => {
           height: 100,
           padding: 15,
           borderTop: '0.5px solid #00000029',
-          borderBottom: '0.5px solid #00000029'
+          borderBottom: '0.5px solid #00000029',
+          flexFlow: 'column'
         }}
       >
         <Grid item xs>
@@ -280,7 +279,7 @@ const ResposiveDrawer = ({ user, mobileOpen, handleDrawerToggle }) => {
       </AppBar> */}
       <nav className={classes.drawer} aria-label="mailbox folders">
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden smUp implementation="css">
+        <Hidden mdUp implementation="css">
           <Drawer
             variant="temporary"
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
@@ -296,7 +295,7 @@ const ResposiveDrawer = ({ user, mobileOpen, handleDrawerToggle }) => {
             {drawer}
           </Drawer>
         </Hidden>
-        <Hidden xsDown implementation="css">
+        <Hidden smDown implementation="css">
           <Drawer
             classes={{
               paper: classes.drawerPaper
