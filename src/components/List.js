@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import hex2rgb from 'hex2rgb';
 import { ReactComponent as Threedots } from '../components/images/threedots.svg';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   card: {
     minWidth: 275
   },
@@ -25,8 +25,21 @@ const useStyles = makeStyles({
   },
   pos: {
     marginBottom: 12
+  },
+  mainListDiv: {
+    display: 'flex',
+    flexDirection: 'column',
+    padding: 8,
+    borderRadius: '4px',
+    margin: '10px',
+    border: '1px solid #E5E9F1',
+    backgroundColor: '#FFFFFF',
+    [theme.breakpoints.down('sm')]: {
+      width: '90%',
+      alignSelf: 'center'
+    }
   }
-});
+}));
 const cards = [
   {
     title: 'Rocky Mountaineer',
@@ -68,6 +81,7 @@ const List = ({ cardTitle }) => {
   const classes = useStyles();
   return (
     <div
+      className={classes.mainListDiv}
       style={{
         display: 'flex',
         flexDirection: 'column',
@@ -75,8 +89,7 @@ const List = ({ cardTitle }) => {
         borderRadius: '4px',
         margin: '10px',
         border: '1px solid #E5E9F1',
-        backgroundColor: '#FFFFFF',
-        maxWidth: 396
+        backgroundColor: '#FFFFFF'
       }}
     >
       <div
