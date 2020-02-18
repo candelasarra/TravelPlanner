@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/TravelPlanner/static/css/main.d1b05096.chunk.css",
+    "main.js": "/TravelPlanner/static/js/main.23714ec0.chunk.js",
+    "main.js.map": "/TravelPlanner/static/js/main.23714ec0.chunk.js.map",
+    "runtime-main.js": "/TravelPlanner/static/js/runtime-main.a54a13ae.js",
+    "runtime-main.js.map": "/TravelPlanner/static/js/runtime-main.a54a13ae.js.map",
+    "static/js/2.10f0834d.chunk.js": "/TravelPlanner/static/js/2.10f0834d.chunk.js",
+    "static/js/2.10f0834d.chunk.js.map": "/TravelPlanner/static/js/2.10f0834d.chunk.js.map",
+    "index.html": "/TravelPlanner/index.html",
+    "precache-manifest.b109c5bab0efa425c198fd5b6207bb5d.js": "/TravelPlanner/precache-manifest.b109c5bab0efa425c198fd5b6207bb5d.js",
+    "service-worker.js": "/TravelPlanner/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/TravelPlanner/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.10f0834d.chunk.js.LICENSE": "/TravelPlanner/static/js/2.10f0834d.chunk.js.LICENSE",
+    "static/media/helpoutline.4da2eb9d.svg": "/TravelPlanner/static/media/helpoutline.4da2eb9d.svg",
+    "static/media/logo.svg": "/TravelPlanner/static/media/logo.5d5d9eef.svg",
+    "static/media/suitcase.0ffefd91.svg": "/TravelPlanner/static/media/suitcase.0ffefd91.svg",
+    "static/media/threedots.3eb7282a.svg": "/TravelPlanner/static/media/threedots.3eb7282a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a54a13ae.js",
+    "static/js/2.10f0834d.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.23714ec0.chunk.js"
+  ]
+}
