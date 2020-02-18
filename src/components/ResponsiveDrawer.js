@@ -139,7 +139,7 @@ const ResposiveDrawer = ({ user, mobileOpen, handleDrawerToggle }) => {
       >
         <Suitcase style={{ padding: '4%', marginLeft: '5%' }} />
         <Typography variant="subtitle1" style={{ fontWeight: 'bold' }}>
-          Suitcase CRM
+          Travel CFM
         </Typography>
       </div>
       <Grid

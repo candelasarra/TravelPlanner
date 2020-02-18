@@ -42,32 +42,32 @@ const useStyles = makeStyles(theme => ({
 }));
 const cards = [
   {
-    title: 'Rocky Mountaineer',
+    title: 'Ricky Mount',
     dueDate: 'Jan 16, 2020 9:00 PM',
     status: 'Pending'
   },
   {
-    title: 'Rocky Mountaineer',
+    title: 'Ricky Mount',
     dueDate: 'Jan 16, 2020 9:00 PM',
     status: 'Pending'
   },
   {
-    title: 'Rocky Mountaineer',
+    title: 'Ricky Mount',
     dueDate: 'Jan 16, 2020 9:00 PM',
     status: 'Pending'
   },
   {
-    title: 'Rocky Mountaineer',
+    title: 'Ricky Mount',
     dueDate: 'Jan 16, 2020 9:00 PM',
     status: 'Pending'
   },
   {
-    title: 'Rocky Mountaineer',
+    title: 'Ricky Mount',
     dueDate: 'Jan 16, 2020 9:00 PM',
     status: 'Pending'
   },
   {
-    title: 'Rocky Mountaineer',
+    title: 'Ricky Mount',
     dueDate: 'Jan 16, 2020 9:00 PM',
     status: 'Pending'
   }
